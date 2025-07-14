@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Indicadores y Brechas</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; }
+    .logo-connect {
+      display: block;
+      margin: 0 auto 10px auto;
+      width: 250px;
+      max-width: 95vw;
+      height: auto;
+    }
+    h1 { font-size: 2em; color: #1762A7; margin-bottom: 10px; text-align: center;}
+    .brechas-descripcion {
+      margin: 16px 0 24px 0;
+      background: #f7fbff;
+      padding: 18px 24px;
+      border-radius: 14px;
+      border-left: 5px solid #1762A7;
+      max-width: 700px;
+      box-shadow: 0 2px 8px #eaf0fa;
+    }
+    .brechas-descripcion ul {
+      margin: 10px 0 0 0;
+      padding-left: 20px;
+    }
+    .brechas-descripcion li {
+      margin-bottom: 5px;
+      font-size: 1.06em;
+      line-height: 1.4;
+    }
+    table { border-collapse: collapse; margin-top: 20px; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+    th { background: #f2f2f2; }
+    .indicador { text-align: left; max-width: 480px; }
+    .campo-abierto {
+      margin: 28px 0 10px 0;
+      background: #fdfaf3;
+      padding: 16px 18px;
+      border-radius: 10px;
+      max-width: 700px;
+      border-left: 5px solid #ffd35a;
+      box-shadow: 0 2px 8px #f8e9c5;
+    }
+    .nota-guardar {
+      max-width: 700px;
+      background: #fff6e0;
+      color: #c15c00;
+      border-left: 4px solid #ffd35a;
+      font-size: 1.13em;
+      margin: 8px 0 22px 0;
+      padding: 10px 14px;
+      border-radius: 7px;
+      font-style: italic;
+    }
+    textarea {
+      width: 98%;
+      min-height: 80px;
+      font-size: 1.05em;
+      margin-top: 8px;
+      padding: 7px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+    .btn { margin-top: 20px; padding: 8px 16px; font-size: 1em; }
+    .btn-local {
+      margin-left: 8px;
+      background: #ffd35a;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-size: 3em;
+      padding: 18px 38px;
+      font-weight: bold;
+      box-shadow: 0 2px 8px #f8e9c5;
+      transition: background 0.3s;
+      margin-top: 22px;
+      display: inline-block;
+    }
+    .btn-local:hover { background: #ffb800; }
+    .btn-exportar {
+      margin-left: 12px;
+      background: #26bb68;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em;
+      padding: 12px 22px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 2px 8px #d6f5e0;
+      transition: background 0.3s;
+      margin-top: 22px;
+      display: inline-block;
+    }
+    .btn-exportar:hover { background: #109645; }
+    .btn-importar {
+      margin-left: 12px;
+      background: #3081cf;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em;
+      padding: 12px 22px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 2px 8px #d1e4fa;
+      transition: background 0.3s;
+      margin-top: 22px;
+      display: inline-block;
+    }
+    .btn-importar:hover { background: #005fa3; }
+    #file-import { display: none; }
+    #resultado { margin-top: 30px; font-size: 1.1em; }
+    #respuesta { font-family: inherit; }
+    .msg {
+      color: #226400;
+      font-size: 1.08em;
+      margin-top: 8px;
+      font-weight: bold;
+      display: block;
+    }
+    .msg-error {
+      color: #bb2124;
+      font-size: 1.08em;
+      margin-top: 8px;
+      font-weight: bold;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo Connect centrado -->
+  <img src="https://www.connectbogota.org/sites/default/files/LOGO%20CONNECT%20ALTA%20-%20COLOR-%20HORIZONTAL%20%285%29.png" alt="Logo Connect" class="logo-connect">
+  <h1>Comité de innovación en salud<br>Priorización de brechas e indicadores</h1>
+  <div class="brechas-descripcion">
+    <strong>Brechas priorizadas:</strong>
+    <ul>
+      <li><strong>Brecha 1:</strong> Pobreza y equidad energética</li>
+      <li><strong>Brecha 2:</strong> Insuficiente inversión pública y privada en I+D+i para transición energética y cambio climático</li>
+      <li><strong>Brecha 3:</strong> Uso ineficiente de la energía en sectores productivos y apropiación de tecnología limpia</li>
+      <li><strong>Brecha 4:</strong> Integración de datos climáticos y energéticos de acceso abierto, para toma de decisiones</li>
+      <li><strong>Brecha 5:</strong> Talento humano y formación especializada</li>
+    </ul>
+  </div>
+
+  <h2>Asigna indicadores a brechas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Indicador</th>
+        <th>Brecha 1</th>
+        <th>Brecha 2</th>
+        <th>Brecha 3</th>
+        <th>Brecha 4</th>
+        <th>Brecha 5</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-indicadores"></tbody>
+  </table>
+
+  <div class="campo-abierto">
+    <strong>Pregunta abierta:</strong>
+    <p>
+      Indique si alguna brecha no corresponde a indicadores y, en ese caso, ¿de dónde podría surgir el indicador apropiado para esa brecha?
+    </p>
+    <textarea id="respuesta" placeholder="Escriba su respuesta aquí..."></textarea>
+    <br>
+    <button class="btn-local" onclick="guardarTodo()">Presione aquí para guardar sus respuestas</button>
+    <button class="btn-exportar" onclick="exportarRespuestas()">Exportar mis respuestas</button>
+    <button class="btn-importar" onclick="document.getElementById('file-import').click()">Importar respuestas</button>
+    <input type="file" id="file-import" accept=".txt" onchange="importarRespuestas(event)">
+    <span class="msg" id="msg-local"></span>
+    <span class="msg-error" id="msg-error"></span>
+  </div>
+  <div class="nota-guardar">
+    Nota: Si no presiona el botón para guardar, sus respuestas y selecciones se perderán al cerrar o recargar la página.<br>
+    Si desea enviar sus respuestas a otra persona, use el botón <strong>Exportar mis respuestas</strong> y comparta el archivo generado.<br>
+    Puede importar respuestas con el botón <strong>Importar respuestas</strong> usando un archivo previamente exportado.
+  </div>
+
+  <button class="btn" onclick="mostrarAsignaciones()">Mostrar asignaciones</button>
+  <div id="resultado"></div>
+  <script>
+    // Lista de indicadores con textos completos
+    const indicadores = [
+      "Indicador 1: La innovación es el proceso de introducir algo nuevo, ya sea un producto, servicio, proceso, método o práctica, que genera valor o mejora una situación existente. Implica la creación de algo nuevo o la modificación de algo existente para hacerlo más efectivo, eficiente o valioso. La innovación puede ocurrir en diversos ámbitos, como la tecnología, la ciencia, los negocios, la sociedad y más.",
+      "Indicador 2: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "Indicador 3: No se limita a la creación de algo completamente nuevo, sino que también abarca la mejora de lo existente: En términos específicos, es un proceso mediante el cual un dominio, producto o servicio se renueva y actualiza por medio de la aplicación de nuevos procesos, la introducción de nuevas técnicas o el establecimiento de ideas exitosas, esto con el fin de crear un nuevo valor.",
+      "Indicador 5: Diseño y despliegue de la Escuela Virtual CTI+E para Transición Energética, con mínimo 5 microcredenciales disponibles en línea sobre energías renovables, eficiencia energética, almacenamiento, captura de carbono e hidrógeno verde.",
+      "Indicador 6: Diseño y despliegue de la Escuela Virtual CTI+E para Transición Energética, con mínimo 5 microcredenciales disponibles en línea sobre energías renovables, eficiencia energética, almacenamiento, captura de carbono e hidrógeno verde.",
+      "Indicador 7: Diseño y despliegue de la Escuela Virtual CTI+E para Transición Energética, con mínimo 5 microcredenciales disponibles en línea sobre energías renovables, eficiencia energética, almacenamiento, captura de carbono e hidrógeno verde.",
+      "Indicador 8: Diseño y despliegue de la Escuela Virtual CTI+E para Transición Energética, con mínimo 5 microcredenciales disponibles en línea sobre energías renovables, eficiencia energética, almacenamiento, captura de carbono e hidrógeno verde.",
+      "Indicador 9: Diseño y despliegue de la Escuela Virtual CTI+E para Transición Energética, con mínimo 5 microcredenciales disponibles en línea sobre energías renovables, eficiencia energética, almacenamiento, captura de carbono e hidrógeno verde.",
+      "Indicador 10: Diseño y despliegue de la Escuela Virtual CTI+E para Transición Energética, con mínimo 5 microcredenciales disponibles en línea sobre energías renovables, eficiencia energética, almacenamiento, captura de carbono e hidrógeno verde.",
+      "Indicador 11: Diseño y despliegue de la Escuela Virtual CTI+E para Transición Energética, con mínimo 5 microcredenciales disponibles en línea sobre energías renovables, eficiencia energética, almacenamiento, captura de carbono e hidrógeno verde.",
+      "Indicador 12: Diseño y despliegue de la Escuela Virtual CTI+E para Transición Energética, con mínimo 5 microcredenciales disponibles en línea sobre energías renovables, eficiencia energética, almacenamiento, captura de carbono e hidrógeno verde."
+    ];
+    const brechas = ['Brecha 1', 'Brecha 2', 'Brecha 3', 'Brecha 4', 'Brecha 5'];
+    const tbody = document.getElementById('tabla-indicadores');
+
+    // Crear tabla de indicadores con checkboxes para cada brecha
+    indicadores.forEach((indicador, idx) => {
+      const tr = document.createElement('tr');
+      const tdIndicador = document.createElement('td');
+      tdIndicador.textContent = indicador;
+      tdIndicador.className = 'indicador';
+      tr.appendChild(tdIndicador);
+
+      brechas.forEach((brecha, j) => {
+        const td = document.createElement('td');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `cb_${idx}_${j}`;
+        td.appendChild(checkbox);
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+
+    // Al cargar la página, mostrar la respuesta y las selecciones guardadas si existen
+    window.onload = function() {
+      const guardada = localStorage.getItem('respuesta_brechas');
+      if (guardada) {
+        document.getElementById('respuesta').value = guardada;
+      }
+      const checks = localStorage.getItem('seleccion_brechas');
+      if (checks) {
+        const obj = JSON.parse(checks);
+        for (const key in obj) {
+          const chk = document.getElementById(key);
+          if (chk) chk.checked = obj[key];
+        }
+      }
+    };
+
+    // Guardar respuesta y selección en localStorage
+    function guardarTodo() {
+      // Guardar texto
+      const respuesta = document.getElementById('respuesta').value.trim();
+      localStorage.setItem('respuesta_brechas', respuesta);
+
+      // Guardar checks
+      let seleccion = {};
+      indicadores.forEach((_, idx) => {
+        brechas.forEach((__, j) => {
+          const id = `cb_${idx}_${j}`;
+          seleccion[id] = document.getElementById(id).checked;
+        });
+      });
+      localStorage.setItem('seleccion_brechas', JSON.stringify(seleccion));
+
+      document.getElementById('msg-local').textContent = '¡Respuestas y selección guardadas localmente!';
+      setTimeout(() => {
+        document.getElementById('msg-local').textContent = '';
+      }, 2200);
+    }
+
+    // Exportar respuestas a un archivo .txt para compartir
+    function exportarRespuestas() {
+      // Recolectar selección de casillas
+      let respuestasExport = [];
+      brechas.forEach((brecha, j) => {
+        let indicadoresAsignados = [];
+        indicadores.forEach((indicador, idx) => {
+          if (document.getElementById(`cb_${idx}_${j}`).checked) {
+            indicadoresAsignados.push(`Indicador ${idx+1}`);
+          }
+        });
+        respuestasExport.push(`${brecha}: ${indicadoresAsignados.join(', ') || '(ninguno)'}`);
+      });
+
+      // Respuesta abierta
+      const respuestaLibre = document.getElementById('respuesta').value.trim();
+
+      // También exportamos un JSON con los datos de checks para poder importar fácilmente
+      let seleccion = {};
+      indicadores.forEach((_, idx) => {
+        brechas.forEach((__, j) => {
+          const id = `cb_${idx}_${j}`;
+          seleccion[id] = document.getElementById(id).checked;
+        });
+      });
+
+      // Generar texto a exportar
+      let contenido = "Asignación de indicadores a brechas:\n\n";
+      contenido += respuestasExport.join('\n') + "\n\n";
+      contenido += "Respuesta abierta:\n" + respuestaLibre + "\n\n";
+      contenido += "DATOS-JSON-INTERNOS: " + JSON.stringify({
+        seleccion: seleccion,
+        respuesta: respuestaLibre
+      }) + "\n";
+
+      // Descargar archivo
+      const blob = new Blob([contenido], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'respuestas_indicadores_brechas.txt';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 100);
+    }
+
+    // Importar respuestas desde un archivo .txt
+    function importarRespuestas(event) {
+      document.getElementById('msg-error').textContent = '';
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const text = e.target.result;
+          // Busca el JSON interno que se exportó
+          const match = text.match(/DATOS-JSON-INTERNOS: (.+)\n?$/m);
+          if (match && match[1]) {
+            const datos = JSON.parse(match[1]);
+            // Restaurar checks
+            if (datos.seleccion) {
+              for (const key in datos.seleccion) {
+                const chk = document.getElementById(key);
+                if (chk) chk.checked = datos.seleccion[key];
+              }
+              localStorage.setItem('seleccion_brechas', JSON.stringify(datos.seleccion));
+            }
+            // Restaurar respuesta abierta
+            if ('respuesta' in datos) {
+              document.getElementById('respuesta').value = datos.respuesta;
+              localStorage.setItem('respuesta_brechas', datos.respuesta);
+            }
+            document.getElementById('msg-local').textContent = "¡Respuestas importadas correctamente!";
+            setTimeout(() => {
+              document.getElementById('msg-local').textContent = '';
+            }, 3200);
+          } else {
+            document.getElementById('msg-error').textContent = "El archivo seleccionado no tiene el formato esperado.";
+          }
+        } catch (err) {
+          document.getElementById('msg-error').textContent = "No se pudo leer el archivo o su formato es incorrecto.";
+        }
+        // Limpiar input para permitir importar varias veces seguidas
+        event.target.value = "";
+      };
+      reader.readAsText(file);
+    }
+
+    // Mostrar resultado de asignaciones
+    function mostrarAsignaciones() {
+      let resultado = [];
+      brechas.forEach((brecha, j) => {
+        let indicadoresAsignados = [];
+        indicadores.forEach((indicador, idx) => {
+          if (document.getElementById(`cb_${idx}_${j}`).checked) {
+            indicadoresAsignados.push(`Indicador ${idx+1}`);
+          }
+        });
+        resultado.push(`<strong>${brecha}:</strong> ${indicadoresAsignados.join(', ') || '(ninguno)'}`);
+      });
+      // También muestra la respuesta escrita
+      const respuesta = document.getElementById('respuesta').value.trim();
+      let respuestaHtml = '';
+      if(respuesta) {
+        respuestaHtml = `<br><strong>Respuesta abierta:</strong><br>${respuesta.replace(/\n/g,'<br>')}`;
+      }
+      document.getElementById('resultado').innerHTML = resultado.join('<br>') + respuestaHtml;
+    }
+  </script>
+</body>
+</html>
